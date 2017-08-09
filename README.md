@@ -28,7 +28,7 @@ Started with the ACPs and KSs for 26 modules (where the module is defined as pro
   - For each group, use hmmsearch (HMMER3) and the KS HMM profile so see the highest scoring found KSs for that profile
     - Each found KS is tagged by which group's ACP preceded it and the KSs with the same group number should be the highest scoring for that group's KS HMM profile
     
-##Final Notes
+## Final Notes
   - Some groups do not have a KS which follow the ACP or typically have KSs farther than 100 amino acids away or on another polypeptide and thus are not captured
     - In this analysis those groups are: 4, 11, 15, 18, 21, and 22
   - Some groups are very similar forming a set and thus the best matching KSs will come from any of the groups in the set
