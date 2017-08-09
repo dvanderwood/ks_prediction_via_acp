@@ -7,7 +7,7 @@ Required software: Python 3, Biopython, MUSCLE, HMMER3
 
 Started with the ACPs and KSs for 26 modules (where the module is defined as processing domains, ACP, KS).
 
-For each Group:
+##For each Group:
   - Use the default options hmmbuild (HMMER3) on both the alignments (MUSCLE) for the ACPs and KSs
   - Using hmmemit (HMMER3) and the -c option, create a consensus sequence using the KS HMM profile
   - Use https://www.ebi.ac.uk/Tools/hmmer/search/hmmsearch to search with the ACP HMM profile and download the XML and full length FASTA files
@@ -23,35 +23,16 @@ For each Group:
   - Run profile_builder_check.py on the FASTA output of the last script and the KSs hich were used to construct the KS HMM profile from before
     - In this case, those KSs would be in the group_profile/group_#/ks_#.fa file
 
-After the above is done for every group:
+##After the above is done for every group:
   - Concatanate all the output found and marked KS FASTAs into one and align (MUSCLE)
   - For each group, use hmmsearch (HMMER3) and the KS HMM profile so see the highest scoring found KSs for that profile
-
-
-- Pull out KSs from sequences with ACP hits that are right after the ACP hits, use simulated KS from hmmemit - ks_finder_v2.py  - run profile_builder_check.py on the output to check for the KSs which would have been in our example modules
-- Run KSs against ks hmm profiles made by hmmbuild using hmmsearch
-- Check if over certain score
-
-KS and ACP hmm profiles are built from the realigned fastas built for the preceding KS work
-
-hmmbuild and hmmsearch all use standard parameters
-hmmemit uses -c to build a consensus sequence
-
-
-HMMER3 ONLINE DATA BASE GUIDELINES: 
-
-UniProtKB
-
-sig bit score: 60seq, 60 hit
-report bit score: 40seq, 40 hit
-
-So many hits the website was timing out when trying to download XML and Fullseq fasta with default settings
-
-For KS search,
-
-HMMER3 ONLINE DATA BASE GUIDELINES: for group_1 at least
-
-UniProtKB
-
-sig bit score: 400seq, 400 hit
-report but score: 300seq, 300 hit
+    - Each found KS is tagged by which group's ACP preceded it and the KSs with the same group number should be the highest scoring for that group's KS HMM profile
+    
+##Final Notes
+  - Some groups do not have a KS which follow the ACP or typically have KSs farther than 100 amino acids away or on another polypeptide and thus are not captured
+    - In this analysis those groups are: 4, 11, 15, 18, 21, and 22
+  - Some groups are very similar forming a set and thus the best matching KSs will come from any of the groups in the set
+    - In this analysis those sets are
+      - 8, 9, and 10
+      - 2, 11, and 25
+    - Individual members of group 7 are rather diverse and could be expected in the 2,11, and 25 set or possibly any of groups 3, 5, and 6
