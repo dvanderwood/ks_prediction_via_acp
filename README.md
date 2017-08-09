@@ -27,6 +27,11 @@ Started with the ACPs and KSs for 26 modules (where the module is defined as pro
   - Concatanate all the output found and marked KS FASTAs into one and align (MUSCLE)
   - For each group, use hmmsearch (HMMER3) and the KS HMM profile so see the highest scoring found KSs for that profile
     - Each found KS is tagged by which group's ACP preceded it and the KSs with the same group number should be the highest scoring for that group's KS HMM profile
+  - The output of each hmmsearch for each group was parsed with a hmmsearch_output_parser.py
+    - KS hits with bit scores over 400 were selected
+    - Any KS which were used to construct the HMM profile that performed that search were thrown out
+    - The percent of these found KSs which came from the expected group was determined.
+    - If a group was part of a suspected mega-group (See Final Notes), the percent of found KSs that were from any of the groups in that set was determined
     
 ## Final Notes
   - Some groups do not have a KS which follow the ACP or typically have KSs farther than 100 amino acids away or on another polypeptide and thus are not captured
