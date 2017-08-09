@@ -40,6 +40,7 @@ Started with the ACPs and KSs for 26 modules (where the module is defined as pro
     - In this analysis those sets are
       - 8, 9, and 10
       - 2, 11, and 25
+      - Possibly 3 and 5
     - Individual members of group 7 are rather diverse and could be expected in the 2,11, and 25 set or possibly any of groups 3, 5, and 6
   - Some sequences are found by more than one ACP HMM profile search on Uniprot and are thus redundant but tagged by more than one group
     - This is seen by groups 3 and 5 for example
