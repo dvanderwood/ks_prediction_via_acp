@@ -20,11 +20,11 @@ Started with the ACPs and KSs for 26 modules (where the module is defined as pro
     - In this case, those ACPs would be in the group_profile/group_#/acp_#.fa file
   - Use ks_finder_v2.py to find the KS domains on the same polypeptide as the found ACPs and that are within 100 amino acids after one of those same ACPs
     - Use the full length FASTA file, the consensus KS sequence, acp_hit_*_locations.txt output from the first script, and a group number identifier
-  - Run profile_builder_check.py on the FASTA output of the last script and the KSs hich were used to construct the KS HMM profile from before
+  - Run profile_builder_check.py on the FASTA output of the last script and the KSs which were used to construct the KS HMM profile from before
     - In this case, those KSs would be in the group_profile/group_#/ks_#.fa file
 
 ## After the above is done for every group:
-  - Concatanate all the output found and marked KS FASTAs into one and align (MUSCLE)
+  - Concatenate all the output found and marked KS FASTAs into one and align (MUSCLE)
   - For each group, use hmmsearch (HMMER3) and the KS HMM profile so see the highest scoring found KSs for that profile
     - Each found KS is tagged by which group's ACP preceded it and the KSs with the same group number should be the highest scoring for that group's KS HMM profile
   - The output of each hmmsearch for each group was parsed with a hmmsearch_output_parser.py
