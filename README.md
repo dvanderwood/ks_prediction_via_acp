@@ -7,7 +7,7 @@ Required software: Python 3, Biopython, MUSCLE, HMMER3
 
 Started with the ACPs and KSs for 26 modules (where the module is defined as processing domains, ACP, KS).
 
-##For each Group:
+## For each Group:
   - Use the default options hmmbuild (HMMER3) on both the alignments (MUSCLE) for the ACPs and KSs
   - Using hmmemit (HMMER3) and the -c option, create a consensus sequence using the KS HMM profile
   - Use https://www.ebi.ac.uk/Tools/hmmer/search/hmmsearch to search with the ACP HMM profile and download the XML and full length FASTA files
@@ -23,7 +23,7 @@ Started with the ACPs and KSs for 26 modules (where the module is defined as pro
   - Run profile_builder_check.py on the FASTA output of the last script and the KSs hich were used to construct the KS HMM profile from before
     - In this case, those KSs would be in the group_profile/group_#/ks_#.fa file
 
-##After the above is done for every group:
+## After the above is done for every group:
   - Concatanate all the output found and marked KS FASTAs into one and align (MUSCLE)
   - For each group, use hmmsearch (HMMER3) and the KS HMM profile so see the highest scoring found KSs for that profile
     - Each found KS is tagged by which group's ACP preceded it and the KSs with the same group number should be the highest scoring for that group's KS HMM profile
